@@ -151,7 +151,7 @@ void WebServer::eventListen()
     utils.addsig(SIGALRM, utils.sig_handler, false);
     utils.addsig(SIGTERM, utils.sig_handler, false);
 
-    alarm(TIMESLOT);
+    // alarm(TIMESLOT);
 
     //工具类,信号和描述符基础操作
     Utils::u_pipefd = m_pipefd;
@@ -422,13 +422,13 @@ void WebServer::eventLoop()
                 dealwithwrite(sockfd);
             }
         }
-        if (timeout)
-        {
-            utils.timer_handler();
+        // if (timeout)
+        // {
+        //     utils.timer_handler();
 
-            LOG_INFO("%s", "timer tick");
+        //     LOG_INFO("%s", "timer tick");
 
-            timeout = false;
-        }
+        //     timeout = false;
+        // }
     }
 }
